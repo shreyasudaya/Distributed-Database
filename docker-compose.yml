@@ -1,0 +1,97 @@
+version: "3.8"
+
+services:
+  Node1:
+    container_name: Node1
+    image: python:3
+    build: .
+    volumes:
+      - ./data1:/data
+    environment:
+      - filesys=data1.txt
+      - currentTerm=1
+      - name=Node1
+      - status=Follower
+      - votes=0
+      - timeout=0
+      - PYTHONUNBUFFERED=1
+      - current_leader=None
+      - canVote=true
+      - isActive=1
+
+  Node2:
+    container_name: Node2
+    image: python:3
+    build: .
+    volumes:
+      - ./data2:/data
+    environment:
+      - filesys=data2.txt
+      - currentTerm=1
+      - name=Node2
+      - status=Follower
+      - votes=0
+      - timeout=0
+      - PYTHONUNBUFFERED=1
+      - current_leader=None
+      - canVote=true
+      - isActive=1
+
+  Node3:
+    container_name: Node3
+    image: python:3
+    build: .
+    volumes:
+      - ./data3:/data
+    environment:
+      - filesys=data3.txt
+      - currentTerm=1
+      - name=Node3
+      - status=Follower
+      - votes=0
+      - timeout=0
+      - PYTHONUNBUFFERED=1
+      - current_leader=None
+      - canVote=true
+      - isActive=1
+
+  Node4:
+    container_name: Node4
+    image: python:3
+    build: .
+    volumes:
+      - ./data4:/data
+    environment:
+      - filesys=data4.txt
+      - currentTerm=1
+      - name=Node4
+      - status=Follower
+      - votes=0
+      - timeout=0
+      - PYTHONUNBUFFERED=1
+      - current_leader=None
+      - canVote=true
+      - isActive=1
+
+  Node5:
+    container_name: Node5
+    image: python:3
+    build: .
+    volumes:
+      - ./data5:/data
+    environment:
+      - filesys=data5.txt
+      - currentTerm=1
+      - name=Node5
+      - status=Follower
+      - votes=0
+      - timeout=0
+      - PYTHONUNBUFFERED=1
+      - current_leader=None
+      - canVote=true
+      - isActive=1
+
+  controller:
+    container_name: Controller
+    build: Controller/.
+    stdin_open: true
